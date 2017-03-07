@@ -1,0 +1,18 @@
+<!-- Theme Search bars Field + header -->
+<div background-size class="container-hearder-image"
+[ngStyle]="{'background-image': 'url(' + data.headerImage + ')'}">
+  <div class="search-bar-bcg">
+    <h2 search-bar-title>{{data.searchText}}</h2>
+    <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="onEvent('onTextChange', $event)"></ion-searchbar>
+  </div>
+</div>
+<!-- List -->
+<ion-list no-margin>
+  <ion-item item-bcg no-margin *ngFor="let item of data.items;"
+  (click)="onEvent('onItemClick', item)">
+    <ion-icon icon-small item-left>
+      <i class="icon {{item.icon}}"></i>
+    </ion-icon>
+    <h2 item-title>{{item.title}}</h2>
+  </ion-item>
+</ion-list>

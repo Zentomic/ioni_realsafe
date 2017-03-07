@@ -1,0 +1,42 @@
+<!-- Themes Register + logo -->
+<ion-grid>
+  <ion-row wrap responsive-md padding>
+    <ion-col offset-25 width-50>
+      <div class="form">
+        <h1 title text-right>{{data.register}}</h1>
+        <ion-item no-padding>
+          <ion-label floating>{{data.username}}</ion-label>
+          <ion-input type="text" [(ngModel)]="username"></ion-input>
+        </ion-item>
+
+        <ion-item no-padding>
+          <ion-label floating>{{data.password}}</ion-label>
+          <ion-input type="password" [(ngModel)]="password"></ion-input>
+        </ion-item>
+
+        <ion-item no-padding>
+          <ion-label floating>{{data.email}}</ion-label>
+          <ion-input type="email" [(ngModel)]="email"></ion-input>
+        </ion-item>
+
+        <ion-item no-padding>
+          <ion-label floating>{{data.fone}}</ion-label>
+          <ion-input type="text" [(ngModel)]="country"></ion-input>
+        </ion-item>
+
+        <ion-item no-padding>
+          <ion-label floating>{{data.address}}</ion-label>
+          <ion-input type="text" [(ngModel)]="city"></ion-input>
+        </ion-item>
+        <button ion-button right clear button-clear (click)="onEvent('onRegister')">{{data.register}}</button>
+      </div>
+
+
+      <div class="logo">
+        <img left [src]="data.logo" />
+        <!--<button ion-button right clear button-clear (click)="onEvent('onSkip')">{{data.skip}}</button>-->
+      </div>
+
+    </ion-col>
+  </ion-row>
+</ion-grid>

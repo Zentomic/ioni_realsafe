@@ -1,0 +1,16 @@
+<!-- Theme Image Sub-Gallery for Category 1 (Animals) -->
+<ion-grid no-padding>
+  <ion-row wrap responsive-md no-margin no-padding>
+    <ion-col width-25 no-margin no-padding *ngFor="let item of data.items;let i = index;">
+      <ion-card background-size no-margin (click)="openImageSlider(data, i)"
+      [ngStyle]="{'background-image': 'url(' + item.image + ')'}">
+        <div class="gallery-title">
+          <div card-title left>{{item.title}}</div>
+          <ion-icon right (click)="onEvent('onFavorite', item, $event)">
+            <i class="icon" [ngClass]="{'icon-heart': item.favorite, 'icon-heart-outline': !item.favorite}"></i>
+          </ion-icon>
+        </div>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-grid>

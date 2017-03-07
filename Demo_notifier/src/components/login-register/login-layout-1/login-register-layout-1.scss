@@ -1,0 +1,68 @@
+/*  #Style Login + logo
+================================================*/
+login-layout {
+  .item-input, .item-checkbox, .item-checkbox-checked, .item-block {
+    background-color: transparent;
+  }
+
+  img {
+    max-width: 100px;
+    margin: 40px auto;
+    display: block;
+  }
+
+  .text-input,
+  ion-label {
+    color: theme-colors('textColors', 'primary') !important;
+  }
+
+  .item-inner {
+    border-bottom-color: theme-colors('mainColors', 'secondary') !important;
+    box-shadow: none !important;
+  }
+
+  [default-button] {
+    margin-top: 20px;
+  }
+
+  .social {
+    margin: 20px auto 0;
+    overflow: hidden;
+
+    button {
+      margin: 1%;
+      width: 48.5%;
+      display: block;
+      float: left;
+    }
+
+    > button:nth-child(2n) {
+      margin-right: 0;
+    }
+  }
+}
+/*  # Theme Simple
+===========================================*/
+login-layout {
+  .item.item-checkbox.item-checkbox-checked {
+    .checkbox-icon {
+      background-color: theme-colors('mainColors', 'secondary');
+      border: 2px solid theme-colors('mainColors', 'secondary');
+    }
+
+    .checkbox-checked .checkbox-inner {
+      border-color: theme-colors('mainColors', 'primary') !important;
+    }
+  }
+
+  .item-checkbox {
+    .checkbox-icon {
+      background-color: theme-colors('mainColors', 'primary');
+      border: 2px solid theme-colors('mainColors', 'secondary');
+    }
+  }
+
+  .noBorder .item-inner{
+    border:none!important;
+  }
+}

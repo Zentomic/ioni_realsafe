@@ -1,0 +1,61 @@
+<!--Fist Screen-->
+<ion-header>
+  <ion-navbar header-color>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title text-left>Zentomic - Notifier</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<!--Fist Screen Content-->
+<ion-content scroll="true" >
+  <page-setting>
+
+    <ion-grid>
+      <ion-row wrap responsive-md padding>
+        <ion-col offset-25 width-50>
+
+          <div class="form">
+            <h2 title text-right>{{data.setting}}</h2>
+          </div>
+
+          <div class="form">
+            <h1 title text-right>{{data.notifier}}</h1>
+            <ion-item no-padding>
+              <ion-label floating>{{data.name}}</ion-label>
+              <ion-input readonly type="text" [(ngModel)]="name"></ion-input>
+            </ion-item>
+            <ion-item no-padding>
+              <ion-label floating>{{data.fone}} - {{data.email}}</ion-label>
+              <ion-input readonly type="text" [(ngModel)]="name"></ion-input>
+            </ion-item>
+          </div>
+
+          <div class="form">
+            <h2 title text-right>{{data.duration}}</h2>
+
+            <ion-list>
+              <ion-item>
+                <ion-label>{{data.notification}}</ion-label>
+                <ion-select [(ngModel)]="duration">
+                  <ion-option value="5">5 Min</ion-option>
+                  <ion-option value="10">10 Mins</ion-option>
+                  <ion-option value="30">30 Min</ion-option>
+                  <ion-option value="60">60 Min</ion-option>
+                </ion-select>
+              </ion-item>
+            </ion-list>
+          </div>
+
+          <div class="logo">
+            <img left [src]="data.logo" />
+            <!--<button ion-button right clear button-clear (click)="onEvent('onSkip')">{{data.skip}}</button>-->
+          </div>
+
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  </page-setting>
+</ion-content>

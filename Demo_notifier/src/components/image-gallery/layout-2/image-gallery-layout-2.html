@@ -1,0 +1,15 @@
+<!--Theme Subcategory 1 (Dogs)-->
+<ion-grid no-padding>
+  <ion-row wrap responsive-md no-margin no-padding>
+    <ion-col width-25 no-margin no-padding *ngFor="let group of data.items;">
+      <ion-card background-size no-margin [ngStyle]="{'background-image': 'url(' + group.image + ')'}">
+        <div class="gallery-title">
+          <h2 item-title left>{{group.title}}</h2>
+          <ion-icon right (click)="onEvent('onFavorite', group, $event)">
+            <i class="icon" [ngClass]="{'icon-heart': group.favorite, 'icon-heart-outline': !group.favorite}"></i>
+          </ion-icon>
+        </div>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-grid>

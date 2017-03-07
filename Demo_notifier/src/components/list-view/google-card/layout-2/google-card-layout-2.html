@@ -1,0 +1,32 @@
+<ion-content has-header>
+  <ion-grid no-padding>
+    <ion-row wrap responsive-sm responsive-md no-margin no-padding>
+      <ion-col width-25 no-margin no-padding *ngFor="let item of data.items;let i = index">
+        <ion-card text-right card-bcg (click)="onEvent('onItemClick', item.title, $event)">
+          <div card-image>
+              <img images-filter src="{{item.image}}" />
+            <h2 card-title>{{item.titleHeader}}</h2>
+          </div>
+          <ion-card-content>
+            <ion-card-title>
+              <h1 card-subtitle>{{item.title}}</h1>
+            </ion-card-title>
+            <p card-body-text>{{item.description}}</p>
+          </ion-card-content>
+          <button ion-button default-button medium right (click)="onEvent('onShare', item, $event)">
+            {{item.shareButton}}
+          </button>
+          <button ion-button default-button medium right (click)="onEvent('onExplore', item, $event)">
+            {{item.button}}
+          </button>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+<!--Fab Button-->
+<ion-fab bottom right>
+  <button button-ion-fab ion-fab (click)="onEvent('onFab', data, $event)">
+    <ion-icon name="add"></ion-icon>
+  </button>
+</ion-fab>

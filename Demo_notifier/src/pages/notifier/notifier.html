@@ -1,0 +1,52 @@
+<!--Fist Screen-->
+<ion-header>
+  <ion-navbar header-color>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title text-left>Zentomic - Notifier</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<!--Fist Screen Content-->
+<ion-content>
+  <page-notifier>
+
+    <ion-grid>
+      <ion-row wrap responsive-md padding>
+        <ion-col offset-25 width-50>
+          <div class="form">
+            <h1 title text-right>{{data.notifier}}</h1>
+
+            <ion-item no-padding>
+              <ion-label floating>{{data.name}}</ion-label>
+              <ion-input type="text" [(ngModel)]="name"></ion-input>
+            </ion-item>
+
+            <ion-item no-padding>
+              <ion-label floating>{{data.email}}</ion-label>
+              <ion-input type="email" [(ngModel)]="email"></ion-input>
+            </ion-item>
+
+            <ion-item no-padding>
+              <ion-label floating>{{data.fone}}</ion-label>
+              <ion-input type="text" [(ngModel)]="fone"></ion-input>
+            </ion-item>
+
+            <ion-item no-padding>
+              <ion-label floating>{{data.address}}</ion-label>
+              <ion-input type="text" [(ngModel)]="address"></ion-input>
+            </ion-item>
+            <button ion-button right clear button-clear (click)="onEvent('onRegister')">{{data.save}}</button>
+          </div>
+          <div class="logo">
+            <img left [src]="data.logo" />
+            <!--<button ion-button right clear button-clear (click)="onEvent('onSkip')">{{data.skip}}</button>-->
+          </div>
+
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  </page-notifier>
+</ion-content>
