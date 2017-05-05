@@ -24,7 +24,8 @@ export class MenuService implements IService {
       //];
 
       return [
-        { "title": "Login", "theme": "LoginPage", "icon": "icon-login", "listView": false, "page": "LoginPage" },
+        //{ "title": "Login", "theme": "LoginPage", "icon": "icon-login", "listView": false, "page": "LoginPage" },
+        { "title": "Profile", "theme": "ProfilePage", "icon": "icon-logout", "listView": true, "component": "" },
         { "title": "Register", "theme": "RegisterPage", "icon": "icon-pencil", "listView": false, "component": "" },
         { "title": "Setting", "theme": "SettingPage", "icon": "icon-settings", "listView": false, "component": "" },
         { "title": "Contact", "theme": "NotifierPage", "icon": "icon-human", "listView": false, "component": "" },

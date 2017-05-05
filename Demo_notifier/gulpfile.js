@@ -38,10 +38,10 @@ gulp.task('tsc', function () {
     var sourcemaps = require("gulp-sourcemaps");
     var ts = require('gulp-typescript');
     var tsProject = ts.createProject('tsconfig.json');
-    return tsProject
+    return gulp
         .src('app')
         .pipe(sourcemaps.init())
-        .pipe(ts(tsProject))
+        .pipe(tsProject())
         .js
         .pipe(sourcemaps.write('./',
         {

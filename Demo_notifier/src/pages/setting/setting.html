@@ -4,31 +4,37 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title text-left>Zentomic - Notifier</ion-title>
+    <ion-title text-left>Zentomic - Realsafe</ion-title>
   </ion-navbar>
 </ion-header>
 
 <!--Fist Screen Content-->
 <ion-content scroll="true" >
-  <page-setting>
+  <page-setting scroll="true">
 
     <ion-grid>
       <ion-row wrap responsive-md padding>
         <ion-col offset-25 width-50>
 
           <div class="form">
-            <h2 title text-right>{{data.setting}}</h2>
-          </div>
-
-          <div class="form">
             <h1 title text-right>{{data.notifier}}</h1>
+           
             <ion-item no-padding>
-              <ion-label floating>{{data.name}}</ion-label>
-              <ion-input readonly type="text" [(ngModel)]="name"></ion-input>
+              <ion-label floating>First name</ion-label>
+              <ion-input readonly type="text" [(ngModel)]="auth.user.name"></ion-input>
             </ion-item>
             <ion-item no-padding>
+              <ion-label floating>Middle name</ion-label>
+              <ion-input readonly type="text" [(ngModel)]="data.middlename"></ion-input>
+            </ion-item>
+            <ion-item no-padding>
+              <ion-label floating>Last name</ion-label>
+              <ion-input readonly type="text" [(ngModel)]="data.lastname"></ion-input>
+            </ion-item>
+          
+            <ion-item no-padding>
               <ion-label floating>{{data.fone}} - {{data.email}}</ion-label>
-              <ion-input readonly type="text" [(ngModel)]="name"></ion-input>
+              <ion-input readonly type="text" [(ngModel)]="auth.user.email"></ion-input>
             </ion-item>
           </div>
 
@@ -48,14 +54,22 @@
             </ion-list>
           </div>
 
-          <div class="logo">
-            <img left [src]="data.logo" />
-            <!--<button ion-button right clear button-clear (click)="onEvent('onSkip')">{{data.skip}}</button>-->
+          <div class="form">
+            <div class="logo">
+              <img left [src]="data.logo" />
+              <!--<button ion-button right clear button-clear (click)="onEvent('onSkip')">{{data.skip}}</button>-->
+            </div>
+            <button ion-button right clear button-clear (click)="onEvent('onSave')">{{data.save}}</button>
           </div>
+       
 
-        </ion-col>
+            
+
+</ion-col>
       </ion-row>
     </ion-grid>
 
   </page-setting>
+
+
 </ion-content>

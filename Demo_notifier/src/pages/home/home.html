@@ -4,7 +4,7 @@
     <button ion-button menuToggle>
       <ion-icon class="icon-menu" name="menu"></ion-icon>
     </button>
-    <ion-title>Zentomic - Notifier</ion-title>
+    <ion-title>Zentomic Realsafe</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -15,6 +15,6 @@
   <button circle-button-small horizonCenter default-button ion-button  (click)="onEvent('onClientInfo')">Client</button>
   <div class="spacer" style="height:15%"></div>
   <button circle-button horizonCenter default-button ion-button  (click)="onEvent('onCheckIn')">Check In</button>
-  
-
+  <div class="spacer" style="height:5%"></div>
+  <button circle-button horizonCenter default-button ion-button (click)="onEvent('onCheckOut')">Check Out</button>
 </ion-content>

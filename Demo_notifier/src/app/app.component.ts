@@ -2,13 +2,17 @@ import { Component, ViewChild } from '@angular/core';
 import { Platform, MenuController, Nav } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 import { MenuService } from '../services/menu-service';
-import { HomePage } from '../pages/home/home';
+//import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
-import { ItemsPage } from '../pages/items/items';
+//import { ItemsPage } from '../pages/items/items';
 import { RegisterPage } from '../pages/register/register';
 import { NotifierPage } from '../pages/notifier/notifier';
-import { ClientPage } from '../pages/client/client';
+//import { ClientPage } from '../pages/client/client';
 import { SettingPage } from '../pages/setting/setting';
+import { AuthService } from '../services/auth/auth.service';
+
+import { ProfilePage } from '../pages/profile/profile';
+
 
 @Component({
   templateUrl: 'app.html',
@@ -25,11 +29,20 @@ export class MyApp {
 
   constructor(public platform: Platform,
     public menu: MenuController,
-    private menuService: MenuService) {
-    this.initializeApp();
+    private menuService: MenuService,
+    public auth: AuthService)
+  {
+    platform.ready().then(() => {
+      this.initializeApp();
 
-    this.pages = menuService.getAllThemes();
-    this.leftMenuTitle = menuService.getTitle();
+      this.pages = menuService.getAllThemes();
+      this.leftMenuTitle = menuService.getTitle();
+
+      //------------------------------
+      // auth
+      auth.startupTokenRefresh();
+    });
+
   }
 
   initializeApp() {
@@ -45,7 +58,6 @@ export class MyApp {
     // close the menu when clicking a link from the menu
     this.menu.close();
 
-
     // navigate to the new page if it is not the current page
     //this.nav.setRoot(ItemsPage, {
     //  componentName: page.theme
@@ -55,11 +67,12 @@ export class MyApp {
 
     switch (page.theme) {
       default:
-      case "LoginPage":
-        value = null;
+      case "ProfilePage":
+        value = ProfilePage;
         break;
       case "LogoutPage":
         value = null;
+        this.auth.logout();
         break;
       case "RegisterPage":
         value = RegisterPage;
@@ -70,9 +83,11 @@ export class MyApp {
       case "NotifierPage":
         value = NotifierPage;
         break;
-
+      case "Auth0":
+        value = ProfilePage;
+        break;
     }
-
+    // jump to page
     if (value) {
       this.nav.push(value, {
         componentName: page.theme

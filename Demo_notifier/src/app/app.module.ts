@@ -4,7 +4,7 @@ import { ClientService } from '../services/clientService';
 
 import { MyApp } from './app.component';
 
-//PAGAS
+//PAGES
 import { LoginPage } from '../pages/login/login';
 import { HomePage } from '../pages/home/home';
 import { RegisterPage } from '../pages/register/register';
@@ -60,12 +60,33 @@ import { SubImageGalleryLayout3 } from '../components/sub-image-gallery/layout-3
 import { LoginLayout1 } from '../components/login-register/login-layout-1/login-register-layout-1';
 import { RegisterLayout2 } from '../components/login-register/register-layout-2/login-register-layout-2';
 
+/**
+ * import for JWT and AUTH0
+ */
+import { AuthConfig, AuthHttp } from 'angular2-jwt';
+import { AuthService } from '../services/auth/auth.service';
+import { Http } from '@angular/http';
+import { Storage } from '@ionic/storage'
 
+import { ProfilePage } from '../pages/profile/profile';
+import { PingPage } from '../pages/ping/ping';
+
+
+let storage: Storage = new Storage();
+
+export function getAuthHttp(http) {
+  return new AuthHttp(new AuthConfig({
+    globalHeaders: [{ 'Accept': 'application/json' }],
+    tokenGetter: (() => storage.get('id_token'))
+  }), http);
+}
 
 @NgModule({
   declarations: [
     ElasticHeader,
     MyApp,
+    ProfilePage,
+    PingPage,
     HomePage,
     LoginPage,
     RegisterPage,
@@ -99,6 +120,8 @@ import { RegisterLayout2 } from '../components/login-register/register-layout-2/
     MyApp,
     HomePage,
     LoginPage,
+    ProfilePage,
+    PingPage,
     RegisterPage,
     NotifierPage,
     ClientPage,
@@ -126,6 +149,15 @@ import { RegisterLayout2 } from '../components/login-register/register-layout-2/
   exports: [
     ElasticHeader
   ],
-  providers: [{ provide: ErrorHandler, useClass: IonicErrorHandler }, ClientService]
+  providers: [
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
+    ClientService,
+    AuthService,
+    {
+      provide: AuthHttp,
+      useFactory: getAuthHttp,
+      deps: [Http]
+    }
+  ]
 })
 export class AppModule { }

@@ -93,22 +93,18 @@ $font-size-text:(
 // Global Colors
 $palettes: (
     mainColors: ( // Also used for backgrounds.
-
-        primary:   #424242, // Used for toolbars
-        secondary:  #FCD736, // Used for various small elements
-        accent:   #202020 //Used for icon-search-bar, loaders-spinners, checkbox-item, icon, button, span, input-field-icons
+        primary:   #ffffff, // Used for toolbars
+        secondary:  #2196f3, // Used for various small elements
+        accent:   #FEFEFE  //Used for icon-search-bar, loaders-spinners, checkbox-item, icon, button, span, input-field-icons
     ),
-
     textColors: ( // Used for text colors in all screens
-
-        primary: #FCD736, // Used for text colors in: item-title, item-subtitle, header-title, header-subtitle
+        primary: #2196f3, // Used for text colors in: item-title, item-subtitle, header-title, header-subtitle
         secondary: #FEFEFE, // Used for text colors in: buttons, header-title, subitem-title, subitem-subtitle
         accent:   #ffffff // Used for text colors in: header-title, header-subtitle
     ),
     blendModes: ( // Used for blend modes
-
-        primary:  #ffffff,
-        secondary: #424242
+        primary:  #0288d1,
+        secondary: #ffffff
     )
 );
 
@@ -169,7 +165,7 @@ $global-opacity: (
        position: absolute;
        pointer-events: none;
        mix-blend-mode: multiply;
-      background-color: theme-colors('blendModes', 'secondary');
+       background-color: theme-colors('blendModes', 'secondary');
      }
 }
 

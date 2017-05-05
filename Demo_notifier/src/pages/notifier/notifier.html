@@ -4,7 +4,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title text-left>Zentomic - Notifier</ion-title>
+    <ion-title text-left>Zentomic Realsafe</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -37,7 +37,7 @@
               <ion-label floating>{{data.address}}</ion-label>
               <ion-input type="text" [(ngModel)]="address"></ion-input>
             </ion-item>
-            <button ion-button right clear button-clear (click)="onEvent('onRegister')">{{data.save}}</button>
+            <button ion-button right clear button-clear (click)="onEvent('onSave')">{{data.save}}</button>
           </div>
           <div class="logo">
             <img left [src]="data.logo" />

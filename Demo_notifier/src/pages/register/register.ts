@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { LoginPage } from '../../pages/login/login';
+//import { LoginPage } from '../../pages/login/login';
 
 @Component({
   selector: 'page-register',

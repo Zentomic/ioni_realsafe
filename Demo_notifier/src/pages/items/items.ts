@@ -4,7 +4,7 @@ import {NavController, NavParams} from 'ionic-angular';
 
 import {IService} from '../../services/IService';
 //import {ItemDetailsPage} from '../item-details/item-details';
-import {LoginPage} from '../../pages/login/login';
+//import {LoginPage} from '../../pages/login/login';
 
 import {CheckBoxService} from '../../services/check-box-service';
 import {TextViewService} from '../../services/text-view-service';

@@ -1,0 +1,11 @@
+{
+	"android": {
+		"release": {
+			"keystore":"zentomic-realsafe.keystore",
+			"storePassword":"Asap2021",
+			"alias":"realsafe",
+			"password":"Asap2021",
+			"keystoreType":""
+		}
+	}
+}

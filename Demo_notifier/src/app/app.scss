@@ -46,6 +46,7 @@
   [item-title] {
     position: relative;
     z-index: 9;
+    color: theme-colors('blendModes', 'secondary') !important;
   }
 }
 // Settings Main  Menu

@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="com.csform.ionic.yellow" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" android-versionCode="10000">
-  <name>Zentomic -Notifier</name>
-  <description>Zentomic Notifier Description</description>
-  <author email="dev@csform.com" href="http://csform.com/">Zentomic</author>
+<widget id="com.zentomic.ionic.realsafe" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" android-versionCode="2017042401">
+  <name>Zentomic - RealSafe</name>
+  <description>Zentomic Realsafe Description</description>
+  <author email="ngoctuan82@gmail.com" href="http://zentomic.com/">Zentomic</author>
   <content src="index.html" />
   <access origin="*" />
   <allow-navigation href="http://ionic.local/*" />
@@ -33,6 +33,7 @@
     <allow-intent href="itms:*" />
     <allow-intent href="itms-apps:*" />
   </platform>
+  <preference name="OverrideUserAgent" value="Mozilla/5.0 Google" />
   <preference name="webviewbounce" value="false" />
   <preference name="UIWebViewBounce" value="false" />
   <preference name="DisallowOverscroll" value="true" />
@@ -54,4 +55,10 @@
   <plugin name="cordova-plugin-splashscreen" spec="~4.0.1" />
   <plugin name="cordova-plugin-x-toast" spec="~2.5.2" />
   <icon src="resources\android\icon\drawable-xhdpi-icon.png" />
+  <preference name="Orientation" value="portrait" />
+  <plugin name="cordova-plugin-inappbrowser" version="1.7.1" />
+  <feature name="InAppBrowser">
+    <param name="ios-package" value="CDVInAppBrowser" />
+    <param name="android-package" value="org.apache.cordova.inappbrowser.InAppBrowser" />
+  </feature>
 </widget>

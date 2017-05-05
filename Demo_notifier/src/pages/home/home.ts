@@ -10,6 +10,7 @@ import { ClientPage } from '../../pages/client/client';
 export class HomePage {
 
   params: any = {};
+  
 
   constructor(public navCtrl: NavController) {
     //data
@@ -25,12 +26,14 @@ export class HomePage {
       "iconKey": "",
       "iconLock": "assets/images/background/loginlight.jpg",
       "title": "Remember me",
+      "btnCheckOutVisible": false
     };
     //events
     this.params.events = {
       onClientInfo: function (params) {
         console.log('onClientInfo:' + JSON.stringify(params));
         //-----------------------------------------------
+        params.data.btnCheckOutVisible = true;
         // Custom code for login here
         //-----------------------------------------------
         // if true navigate to HomePage
@@ -44,6 +47,15 @@ export class HomePage {
         // if true navigate to HomePage
        
         alert("Check In");
+      },
+      onCheckOut: function (params) {
+        console.log('onCheckOut:' + JSON.stringify(params));
+        //-----------------------------------------------
+        // Custom code for check out here
+        //-----------------------------------------------
+        // if true navigate to HomePage
+
+        alert("Check out");
       }
     };
   }
